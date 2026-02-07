@@ -15,4 +15,4 @@ if (player === computer) {
 
 const choices = ["Rock", "Paper", "Scissors"];
 console.log(`Player picked: ${choices[player]}`);
-console.log(`Computer picked: ${choices[computer]}`);
+console.log(`Computer picked: ${choices[computer]});
