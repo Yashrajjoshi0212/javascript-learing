@@ -1,0 +1,21 @@
+while (true) {
+
+    let num1 = Number(prompt("Enter first number:"));
+    let op = prompt("Enter operator (+,-,*,/) or q to quit:");
+    
+    if (op === "q") {
+        break;
+    }
+
+    let num2 = Number(prompt("Enter second number:"));
+
+    let result;
+
+    if (op === "+") result = num1 + num2;
+    else if (op === "-") result = num1 - num2;
+    else if (op === "*") result = num1 * num2;
+    else if (op === "/") result = num1 / num2;
+    else result = "Invalid";
+
+    console.log("Result:", result);
+}
