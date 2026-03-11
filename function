@@ -1,0 +1,45 @@
+// 1. Simple Function
+function greet() {
+    console.log("Hello, Welcome to JavaScript!");
+}
+greet();
+
+
+// 2. Function with parameters
+function add(a, b) {
+    return a + b;
+}
+console.log("Addition:", add(5, 3));
+
+
+// 3. Function to check even or odd
+function checkEvenOdd(num) {
+    if (num % 2 === 0) {
+        console.log(num + " is Even");
+    } else {
+        console.log(num + " is Odd");
+    }
+}
+checkEvenOdd(7);
+
+
+// 4. Arrow Function
+const multiply = (a, b) => {
+    return a * b;
+};
+console.log("Multiplication:", multiply(4, 6));
+
+
+// 5. Function to find maximum number
+function findMax(a, b, c) {
+    return Math.max(a, b, c);
+}
+console.log("Max number:", findMax(10, 25, 15));
+
+
+// 6. Function with default parameter
+function welcome(name = "Guest") {
+    console.log("Welcome " + name);
+}
+welcome("Yashraj");
+welcome();
