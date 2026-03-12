@@ -1,0 +1,7 @@
+async function test() {
+  return 5;
+}
+
+test().then(result => {
+  console.log(result);
+});
