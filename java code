@@ -1,0 +1,39 @@
+class CoffeeShop {
+
+    public static void main(String[] args) {
+
+        // boolean variables
+        boolean isLatte = true;
+        boolean isIced = false;
+        boolean withMatcha = true;
+
+        // integer variables
+        int itemsOrdered = 1;
+        int vanillaPumps = 3;
+
+        // drink logic
+        if (isLatte && isIced) {
+            System.out.println("espresso, milk, ice, syrup");
+
+        } else if (isLatte && withMatcha) {
+            System.out.println("matcha, oat milk, ice, vanilla");
+
+        } else if (isLatte) {
+            System.out.println("espresso, steamed milk");
+
+        } else {
+            System.out.println("Select a drink to get started!");
+        }
+
+        // cup holder logic
+        if (itemsOrdered > 1) {
+            System.out.println("provide cup holder");
+        }
+
+        // vanilla charge logic
+        if (vanillaPumps >= 2) {
+            System.out.println("charge $1 extra");
+        }
+
+    }
+}
