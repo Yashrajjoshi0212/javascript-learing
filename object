@@ -1,0 +1,5 @@
+const car = {
+  brand: "BMW",
+  color: "black",
+  price: 5000000
+};
