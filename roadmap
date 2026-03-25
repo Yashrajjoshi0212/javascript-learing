@@ -1,0 +1,75 @@
+Learn fundamentals first.
+
+What is JavaScript
+How to run JS (Browser + VS Code)
+Variables (let, const, var)
+Data types
+Operators
+Input / Output (prompt, alert, console.log)
+Conditions (if, else, switch)
+Loops (for, while, do while)
+Functions
+
+✅ Practice:
+
+Calculator
+Number palindrome
+Prime number
+Fibonacci
+🟢 Step 2 – Core JavaScript (Important)
+
+This makes your logic strong.
+
+Arrays
+Objects
+Strings methods
+Math methods
+Date & Time
+Scope
+Hoisting
+Closures
+Callback functions
+
+✅ Practice:
+
+Todo list logic
+Array problems
+String problems
+Coding Ninja / LeetCode easy
+🟢 Step 3 – DOM (Very Important for Web)
+
+DOM = Control HTML using JS
+
+document.getElementById
+querySelector
+Events (click, input, submit)
+Change text / style
+Create elements
+Remove elements
+
+✅ Projects:
+
+Counter app
+Calculator UI
+Todo App
+Navbar toggle
+🟢 Step 4 – Advanced JavaScript
+
+Needed for React / Node / Jobs
+
+ES6+
+Arrow functions
+Destructuring
+Spread / Rest
+Promises
+Async / Await
+Fetch API
+Local Storage
+Modules
+
+✅ Projects:
+
+Weather app
+API project
+Notes app
+Login form
