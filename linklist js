@@ -1,0 +1,169 @@
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.size = 0;
+  }
+
+  // ✅ Add at end
+  add(data) {
+    let newNode = new Node(data);
+
+    if (!this.head) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+    this.size++;
+  }
+
+  // ✅ Add at beginning
+  addFirst(data) {
+    let newNode = new Node(data);
+    newNode.next = this.head;
+    this.head = newNode;
+    this.size++;
+  }
+
+  // ✅ Add at index
+  addAt(index, data) {
+    if (index < 0 || index > this.size) return "Invalid index";
+
+    if (index === 0) {
+      this.addFirst(data);
+      return;
+    }
+
+    let newNode = new Node(data);
+    let current = this.head;
+    let previous;
+    let i = 0;
+
+    while (i < index) {
+      previous = current;
+      current = current.next;
+      i++;
+    }
+
+    newNode.next = current;
+    previous.next = newNode;
+    this.size++;
+  }
+
+  // ✅ Remove from beginning
+  removeFirst() {
+    if (!this.head) return null;
+
+    this.head = this.head.next;
+    this.size--;
+  }
+
+  // ✅ Remove from end
+  removeLast() {
+    if (!this.head) return null;
+
+    if (!this.head.next) {
+      this.head = null;
+    } else {
+      let current = this.head;
+      while (current.next.next) {
+        current = current.next;
+      }
+      current.next = null;
+    }
+    this.size--;
+  }
+
+  // ✅ Remove by value
+  remove(data) {
+    if (!this.head) return null;
+
+    if (this.head.data === data) {
+      this.head = this.head.next;
+      this.size--;
+      return;
+    }
+
+    let current = this.head;
+
+    while (current.next && current.next.data !== data) {
+      current = current.next;
+    }
+
+    if (current.next) {
+      current.next = current.next.next;
+      this.size--;
+    }
+  }
+
+  // ✅ Get element by index
+  get(index) {
+    if (index < 0 || index >= this.size) return null;
+
+    let current = this.head;
+    let i = 0;
+
+    while (i < index) {
+      current = current.next;
+      i++;
+    }
+
+    return current.data;
+  }
+
+  // ✅ Search element
+  search(data) {
+    let current = this.head;
+    let index = 0;
+
+    while (current) {
+      if (current.data === data) return index;
+      current = current.next;
+      index++;
+    }
+
+    return -1;
+  }
+
+  // ✅ Reverse LinkedList (IMPORTANT 🔥)
+  reverse() {
+    let prev = null;
+    let current = this.head;
+    let next = null;
+
+    while (current) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+
+    this.head = prev;
+  }
+
+  // ✅ Print LinkedList
+  print() {
+    let current = this.head;
+    let result = "";
+
+    while (current) {
+      result += current.data + " -> ";
+      current = current.next;
+    }
+
+    console.log(result + "null");
+  }
+
+  // ✅ Size
+  getSize() {
+    return this.size;
+  }
+
+  // ✅ Check empty
+  isEmpty() {
+    return this.size === 0;
+  }
+}
