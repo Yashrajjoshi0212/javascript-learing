@@ -1,0 +1,124 @@
+// Node class
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+// Doubly Linked List class
+class DoublyLinkedList {
+    constructor() {
+        this.head = null;
+    }
+
+    // Insert at beginning
+    insertAtStart(data) {
+        let newNode = new Node(data);
+
+        if (this.head !== null) {
+            this.head.prev = newNode;
+            newNode.next = this.head;
+        }
+
+        this.head = newNode;
+    }
+
+    // Insert at end
+    insertAtEnd(data) {
+        let newNode = new Node(data);
+
+        if (this.head === null) {
+            this.head = newNode;
+            return;
+        }
+
+        let temp = this.head;
+        while (temp.next !== null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    // Delete from start
+    deleteFromStart() {
+        if (this.head === null) return;
+
+        this.head = this.head.next;
+
+        if (this.head !== null) {
+            this.head.prev = null;
+        }
+    }
+
+    // Delete from end
+    deleteFromEnd() {
+        if (this.head === null) return;
+
+        if (this.head.next === null) {
+            this.head = null;
+            return;
+        }
+
+        let temp = this.head;
+
+        while (temp.next !== null) {
+            temp = temp.next;
+        }
+
+        temp.prev.next = null;
+    }
+
+    // Display forward
+    displayForward() {
+        let temp = this.head;
+        let result = "";
+
+        while (temp !== null) {
+            result += temp.data + " <-> ";
+            temp = temp.next;
+        }
+
+        console.log(result + "NULL");
+    }
+
+    // Display backward
+    displayBackward() {
+        let temp = this.head;
+
+        if (temp === null) return;
+
+        // go to last node
+        while (temp.next !== null) {
+            temp = temp.next;
+        }
+
+        let result = "";
+
+        while (temp !== null) {
+            result += temp.data + " <-> ";
+            temp = temp.prev;
+        }
+
+        console.log(result + "NULL");
+    }
+}
+
+// 🔥 Example Usage
+let list = new DoublyLinkedList();
+
+list.insertAtStart(10);
+list.insertAtStart(5);
+list.insertAtEnd(20);
+list.insertAtEnd(30);
+
+list.displayForward();   // 5 <-> 10 <-> 20 <-> 30 <-> NULL
+list.displayBackward();  // 30 <-> 20 <-> 10 <-> 5 <-> NULL
+
+list.deleteFromStart();
+list.deleteFromEnd();
+
+list.displayForward();   // 10 <-> 20 <-> NULL
